@@ -1,0 +1,13 @@
+version: '3'
+services:
+  docker_challenge:
+    image: amanarora1010/hive:docker-challenge-solved
+    ports:
+      - "8080:80"
+    depends_on:
+      - metrics_container
+
+  metrics_container:
+    image: os_metrics:latest
+    ports:
+      - "5002:5000"
