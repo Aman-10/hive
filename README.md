@@ -10,7 +10,7 @@ Ans 1.
 3. After changing the port in haproxy.cfg to the right we could observe that haproxy was only serving traffic twice i.e. every 1 out 3 request were failing. Investigating the nginx errors.log pointed to the wrong file being used to run one of three nginx services. 
 4. Finally, we update the entrypoint.sh file to use the correct nginx conf for nginx02 and we were finally able to server the request 3/3 times.
 5. The updated [entrypoint.sh](entrypoint.sh), [haproxy.cfg](haproxy.cfg) and [index.html](index.html) has also been added in the git repo. 
-6. The name of the image is 
+6. The name of the image is `amanarora1010/hive:docker-challenge-solved`
 
 
 Ans 2. 
