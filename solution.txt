@@ -1,0 +1,4 @@
+1. After inspecting the haproxy.cfg we found that the request are being server to 3 ports on localhost i.e. 8001, 8002, 8000.
+2. Next, I examined the /etc/nginx folder and saw 3 nginx configs nginx01, nginx02 and nginx03. However, after going through these files it can be confirmed that nginx is running on port 8001, 8002 and 8003, hence, making the port 8000 a wrong port in haproxy.cfg.
+3. After changing the port in haproxy.cfg to the right we could observe that haproxy was only serving traffic twice i.e. every 1 out 3 request were failing. Investigating the nginx errors.log pointed to the wrong file being used to run one of three nginx services.
+4. Finally, we update the entrypoint.sh file to use the correct nginx conf for nginx02 and we were finally able to server the request 3/3 times.
